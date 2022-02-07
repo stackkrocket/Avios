@@ -1,0 +1,80 @@
+import { AccountCircleOutlined } from '@material-ui/icons'
+import styled from 'styled-components'
+import { mobile } from '../responsive'
+
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: #f7fcf6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+const Wrapper = styled.div`
+  width: 40%;
+  padding: 20px;
+  background: white;
+  ${mobile({
+    width: "75%"
+  })}
+`
+const Title = styled.h1`
+  font-size: 20px;
+  font-weight: 700;
+  color: #185074;
+  margin: 10px 0;
+  text-align: center;
+`
+
+const Form = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+`
+const Input = styled.input`
+  flex: 1;
+  min-width: 40%;
+  margin: 20px 10px 0 0;
+  padding: 12px;
+  outline:none;
+  border: 1px solid #7c7c7c;
+`
+const Agreement = styled.p`
+  font-size: 12px;
+  margin: 20px 0;
+`
+const Button = styled.button`
+  width: 40%;
+  border: none;
+  background: #185074;
+  color: white;
+  font-size: 17px;
+  padding: 15px 20px;
+  letter-spacing: 1.3;
+  cursor:pointer;
+  margin: 10px 0;
+`
+
+
+const Register = () => {
+  return (
+    <Container>
+        <Wrapper>
+          <Title>Create Your Account</Title>
+          <Form>
+            <Input placeholder="Name"/>
+            <Input placeholder="Last Name"/>
+            <Input placeholder="Email"/>
+            <Input placeholder="Password"/>
+            <Input placeholder="Confirm Password"/>
+            <Agreement>
+              By creating an account, you agree to the processing of your personal data in accordance with our <b>Privacy Policy</b>
+            </Agreement>
+            <Button>SUBMIT</Button>
+          </Form>
+        </Wrapper>
+    </Container>
+  )
+}
+
+export default Register
