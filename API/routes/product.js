@@ -64,18 +64,18 @@ router.get('/products', async (req, res) => {
      const queryStringNew = req.query.new;
      const queryStringCategories = req.query.categories;
    
-    let product;
+    let products;
     if(queryStringNew){
-      product = await Product.find().sort({createdAt: -1}).limit(1)
+      products = await Product.find().sort({createdAt: -1}).limit(1)
     }else if(queryStringCategories){
-      product  = await Product.find({categories: {
+      products  = await Product.find({categories: {
         $in: [queryStringCategories] 
       }})
     }else{
-      product = await Product.find();
+      products = await Product.find();
     }
     res.status(200)
-    res.json(product)
+    res.json(products)
 
   } catch (error) {
     res.status(500).json(error);

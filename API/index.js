@@ -7,6 +7,7 @@ const cors = require('cors');
 const port = process.env.PORT || 4400;
 
 //User defined modules and config goes here
+app.use(cors());
 app.use(bodyParser.json());
 const authRoute = require('./routes/auth')
 const userRoute = require('./routes/user')
@@ -20,7 +21,7 @@ app.use(userRoute);
 app.use(orderRoute)
 app.use(cartRoute)
 app.use(stripeRoute);
-app.use(cors());
+
 
 //User defined modules and config ends here
 
